@@ -1,0 +1,26 @@
+.section{
+    width: 91%;
+    min-height: 100vh;
+    position: absolute;
+    visibility: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.active{
+    visibility: visible;
+    animation: shift 350ms ease-in-out both;
+}
+
+@keyframes shift{
+    0%{
+        background: rgba(255,255,255,0.7);
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        background: transparent;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

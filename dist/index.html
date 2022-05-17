@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Asad Mujumder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/dist/assets/favicon//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/dist/assets/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/dist/assets/favicon//favicon-16x16.png">
+    <link rel="manifest" href="/dist/assets/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <title>Asad Mujumder | Home</title>
 </head>
 <body>
-    
+    <header class="header">
+        <nav class="nav">
+            <span title="Home" class="icon active-icon" data-section="section-Home"><i class="fa-solid fa-house-chimney" style="color: #ff0000;"></i></span>
+            <span title="About" class="icon" data-section="section-About"><i class="fa-solid fa-user" style="color: #ff7f00;"></i></span>
+            <span title="Portfolio" class="icon" data-section="section-Portfolio"><i class="fa-solid fa-briefcase" style="color: #00ff00;"></i></span>
+            <span title="Blogs" class="icon" data-section="section-Blogs"><i class="fa-solid fa-newspaper" style="color: #0000ff;"></i></span>
+            <span title="Contact" class="icon" data-section="section-Contact"><i class="fa-solid fa-envelope" style="color: #4b0082;"></i></span>
+        </nav>
+    </header>
+    <main>
+        <section class="section section-Home active">
+            <div class="left-container">
+                <div class="background-clip"></div>
+                <div class="image-container">
+                    <img src="/dist/assets/images/profile.png" alt="Asad Mujumder's photo">
+                </div>
+            </div>
+            <div class="right-container">
+                <h1>
+                    Hi, I'm <span class="name">Asad Mujumder</span>
+                </h1>
+                <h2>A Full-stack Web Developer</h2>
+                <p>
+                    I am a MERN stack web Developer with years of experience in HTML5, CSS3, Vanilla Javascript, jQuery, SASS, React, Node, Express, Redux, MongoDB, Mongoose, MySQL, SQL, Typescript, GraphQL, REST API, Material UI, etc.
+                </p>
+                <div>
+                    <a href="/dist/assets/downloads/CV.pdf" download="CV_OF_ASAD_MUJUMDER" class="link-download-cv">
+                        <span>Download CV</span>
+                        <span><i class="fa-solid fa-download"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section section-About">About</section>
+        <section class="section section-Portfolio">Portfolio</section>
+        <section class="section section-Blogs">Blogs</section>
+        <section class="section section-Contact">Contact</section>
+    </main>
     <script src="./js/main.js"></script>
 </body>
 </html>

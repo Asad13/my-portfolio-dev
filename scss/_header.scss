@@ -1,0 +1,46 @@
+.header{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+    z-index: 1;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+
+    .icon{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: relative;
+        border: 2px solid $color-white-secondary;
+        margin: 1rem 0;
+        cursor: pointer;
+        @include transition;
+        @include boxShadowGlow;
+
+        &:hover:not(.active-icon){
+            border-color: gold;
+            transform: scale(1.3);
+        }
+
+        &.active-icon{
+            background-color: $color-tertiary;
+
+            i{
+                color: $color-white !important;
+            }
+        }
+
+        i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 1.2rem;
+        }
+    }
+}
