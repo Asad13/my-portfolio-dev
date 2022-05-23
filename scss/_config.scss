@@ -12,10 +12,17 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-white-secondary: #cfcccc;
 $color-yellow: #ffff00;
+$color-red: #ff0000;
+$color-border: rgb(129, 129, 129);
 /* Colors END */
 
 /* Fonts START */
 $font-primary: 'Noto Sans', sans-serif;
+$font-weight: (
+    normal: 400,
+    semi-bold: 600,
+    bold: 700
+);
 /* Fonts END */
 
 /* Mixins START */
@@ -23,8 +30,18 @@ $font-primary: 'Noto Sans', sans-serif;
     transition: all 350ms ease-in-out;
 }
 
+@mixin displayFlex($justifyContent: center, $alignItems: center){
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
 @mixin boxShadow {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 10px 16px 0 rgba(0,0,0, 0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@mixin cardShadow {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.5),0 0 6px 3px rgba(0,0,0, 0.4) inset;
 }
 
 @mixin boxShadowGlow {
@@ -48,11 +65,185 @@ a{
     color: $color-white;
 }
 
+a[target="_blank"]{
+    text-decoration: underline;
+    color: $color-tertiary;
+}
+
 h1{
     font-weight: 700;
     font-size: 48px;
 }
 
 h2{
+    font-size: 2.5rem;
     font-weight: 600;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    color: $color-tertiary;
+}
+
+p{
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.card{
+    @include cardShadow;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+}
+
+.dropdown{
+    position: relative;
+    cursor: pointer;
+}
+
+.dropbtn{
+    border: 1px solid $color-secondary;
+    border-radius: 7px;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include boxShadow;
+
+    span{
+        display: inline-block;
+        pointer-events: none;
+    }
+
+    #{&}-icon{
+        font-size: 1.2rem;
+    }
+}
+
+.dropdown-content{
+    position: absolute;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(65, 64, 64, 0.9);
+    width: inherit;
+    z-index: 1;
+    border-radius: 7px;
+    @include transition;
+    @include boxShadow;
+
+    ul{
+        list-style-type:none;
+
+        li{
+            display: block;
+            border-bottom: 1px solid $color-primary;
+            padding: 7px 10px;
+
+            &:hover{
+                color: $color-tertiary;
+            }
+        }
+    }
+}
+
+.empty{
+    color: red;
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #888;
+    width: 600px;
+    max-width: 80%; /* Could be more or less, depending on screen size */
+    max-height: 500px;
+    overflow: auto;
+
+    img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .modal-info{
+        border-top: 1px solid $color-secondary;
+        padding: 1rem;
+    }
+}
+
+/* The Close Button */
+.modal-close {
+    color: $color-white;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    @include transition;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: $color-yellow;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.info-row{
+    @include displayFlex;
+    width: 100%;
+    color: $color-primary;
+    margin-bottom: 0;
+}
+
+.info-column{
+    display: block;
+
+    &:first-child{
+        flex: 1 0 50%;
+        max-width: 50%;
+        text-align: right;
+        padding-right: .5rem;
+        color: $color-tertiary;
+    }
+
+    &:last-child{
+        flex: 1 0 50%;
+        max-width: 50%;
+        text-align: left;
+        padding-left: .5rem;
+    }
+}
+
+.tag {
+    display: inline-block;
+    background-color: $color-secondary;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin: 0 5px;
 }

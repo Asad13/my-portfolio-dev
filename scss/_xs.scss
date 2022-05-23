@@ -1,0 +1,21 @@
+@media only screen and (max-width: 425px) {
+    .section-About{
+        .work-intro{
+            .card-work{
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 0 0 5%;
+                text-align: center;
+                border-color: $color-yellow;
+
+                h2{
+                    font-size: 2rem;
+                }
+
+                p{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

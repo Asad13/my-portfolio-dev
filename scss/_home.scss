@@ -47,44 +47,6 @@
     }
 
     p{
-        margin: 1.5rem 0;
-        line-height: 1.6;
-    }
-
-    .link-download-cv{
-        position: relative;
-        display: inline-block;
-        margin: 1rem 0;
-        font-weight: 600;
-        border: 1px solid $color-tertiary;
-        padding: 6px 13px;
-        border-radius: 2rem;
-
-        span:first-child{
-            margin-right: 10px;
-        }
-
-        &::before{
-            content: '';
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 25%;
-            height: 100%;
-            background-color: $color-tertiary;
-            border-top-right-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-            z-index: -1;
-            @include transition;
-        }
-
-        &:hover {
-            &::before{
-                width: 100%;
-                border-top-left-radius: 1rem;
-                border-bottom-left-radius: 1rem;
-            }
-        }
+        margin-top: 1.5rem;
     }
 }

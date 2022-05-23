@@ -22,7 +22,7 @@
         @include transition;
         @include boxShadowGlow;
 
-        &:hover:not(.active-icon){
+        &:hover:not(.active-icon),&:focus:not(.active-icon){
             border-color: gold;
             transform: scale(1.3);
         }
