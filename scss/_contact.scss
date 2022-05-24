@@ -1,0 +1,58 @@
+.contact-container{
+    @include displayFlex($alignItems: flex-start);
+    width: 100%;
+
+    .email-container,.address-container{
+        flex: 0 0 50%;
+        max-width: 50%;
+        @include displayFlex($justifyContent: flex-start,$alignItems: stretch);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .contact{
+        display: flex;
+        width: 100%;
+        margin-bottom: 7px;
+
+        .contact-logo{
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-info{
+            flex: 1;
+            text-align: right;
+            padding: 0 1rem;
+        }
+
+        img{
+            width: 24px;
+            height: auto;
+        }
+    }
+}
+
+.social-icon-container{
+    width: 100%;
+    @include displayFlex;
+    flex-wrap: wrap;
+    
+    .icon{
+        background: $color-tertiary;
+        margin: 4px;
+        @include boxShadow($alpha1: 0.4, $alpha2: 0.3);
+
+        &:hover{
+            background-color: $color-red;
+            transform: scale(1.2);
+        }
+        
+        i{
+            color: $color-white;
+            font-size: 1.4rem;
+        }
+    }
+}

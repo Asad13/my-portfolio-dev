@@ -2,7 +2,7 @@
     width: 91%;
     min-height: 100vh;
     position: absolute;
-    visibility: hidden;
+    display: none;
     transform: translateY(-100%);
     opacity: 0;
 }
@@ -12,7 +12,7 @@
 }
 
 .active{
-    visibility: visible;
+    display: block;
     animation: shift 350ms ease-in-out both;
 }
 

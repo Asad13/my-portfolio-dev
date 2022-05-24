@@ -11,15 +11,8 @@
     flex-direction: column;
 
     .icon{
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        position: relative;
         border: 2px solid $color-white-secondary;
         margin: 1rem 0;
-        cursor: pointer;
-        @include transition;
         @include boxShadowGlow;
 
         &:hover:not(.active-icon),&:focus:not(.active-icon){
@@ -33,14 +26,6 @@
             i{
                 color: $color-white !important;
             }
-        }
-
-        i{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            font-size: 1.2rem;
         }
     }
 }
