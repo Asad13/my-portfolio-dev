@@ -1,7 +1,7 @@
 import {certificates,projects} from './modules/data.mjs';
 
 const sections = document.querySelectorAll('.section');
-const icons = document.querySelectorAll('.icon');
+const icons = document.querySelectorAll('.icon-nav');
 icons.forEach((icon) => {
     icon.addEventListener('click', function(){
         if(!this.classList.contains('active-icon')){
@@ -370,3 +370,40 @@ window.onclick = function(event) {
         document.body.removeChild(document.querySelector('.modal'));
     }
 }
+
+document.querySelectorAll('.form-control').forEach(input => {
+    input.addEventListener('change', function(){
+        if(this.value){
+            this.classList.add('has-value');
+            this.nextElementSibling.nextElementSibling.textContent = "";
+        }else{
+            this.classList.remove('has-value');
+            this.nextElementSibling.nextElementSibling.textContent = this.nextElementSibling.textContent + ' is needed.';
+        }
+    })
+})
+
+document.querySelector('.email-form').addEventListener('submit', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    const title = document.querySelector('#title');
+    if(!title.value){
+        title.nextElementSibling.nextElementSibling.textContent = "Title is needed.";
+    }
+    const message = document.querySelector('#message');
+    if(!message.value){
+        message.nextElementSibling.nextElementSibling.textContent = "Message is needed.";
+    }
+
+    if(title.value && message.value){
+        window.open(`mailto:asaduzzaman.anik.me@gmail.com?subject=${title.value}&body=${message.value}`);
+    }
+});
+
+document.querySelector('.email-form').addEventListener('reset', function(){
+    const title = document.querySelector('#title');
+    title.nextElementSibling.nextElementSibling.textContent = "";
+    const message = document.querySelector('#message');
+    message.nextElementSibling.nextElementSibling.textContent = "";
+});
