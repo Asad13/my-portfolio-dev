@@ -1,5 +1,11 @@
 import {certificates,projects} from './modules/data.mjs';
 
+window.addEventListener('load', () => {
+    const profileImage = document.querySelector('.profile-pic');
+    const isLoaded = profileImage.complete || profileImage.naturalHeight !== 0;
+    if(isLoaded) profileImage.previousElementSibling.style.display = "none";
+});
+
 const sections = document.querySelectorAll('.section');
 const icons = document.querySelectorAll('.icon-nav');
 icons.forEach((icon) => {

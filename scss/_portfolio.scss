@@ -2,6 +2,11 @@
     .project{
         position: relative;
         overflow: hidden;
+
+        img {
+            border-bottom: 1px solid #3ff328;
+        }
+        
         .tags-container{
             @include displayFlex;
             flex-wrap: wrap;
