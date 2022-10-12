@@ -63,4 +63,19 @@
     p{
         margin-top: 1.5rem;
     }
+
+    .link-portfolio{
+        display:block;
+        margin-top: 1rem;
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #ffffff;
+
+        &:hover{
+            color: $color-tertiary;
+            border-bottom-color:  $color-tertiary;
+        }
+    }
 }
